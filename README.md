@@ -1,5 +1,5 @@
 # signup-via-safari
-This is a simple iOS example app (Swift 2) that shows how to onboard new users via a web signup form that is already in place.  The app launches the web signup form via a Safari View Controller (SFSafariViewController).  Once the form is filled / submitted if all checks out (e.g. username/password valid, and account provisioned) the web app then redirects the browser to a custom URL Scheme defined by the example app.  
+This is a simple iOS example app (Swift 2) that shows how to onboard new users via a web signup form that is already in place.  The app launches the web signup form via a Safari View Controller (SFSafariViewController).  In theory, once the form is filled / submitted if all checks out (e.g. username/password valid, and account provisioned) the web app then redirects the browser to a custom URL Scheme defined by the example app.  
 
 ## Instructions
 
