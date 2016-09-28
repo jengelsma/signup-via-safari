@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+form { display: inline-block; }
+.element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+</style>
+<script>
+function returnToApp() {
+  user = document.getElementById("signup").elements["email"].value;
+  window.location = "logindemo://?user=" + user;
+  return false;
+}
+</script>
+</head>
+<body>
+<div class="element">
+Welcome to our super cool app.  We are so glad you are here!   Please take a moment and signup for a new account.
+<br/>
+<br/>
+
+<form id="signup" onsubmit="return returnToApp();" class="pure-form pure-form-stacked" >
+    <fieldset>
+        <legend>Signup for a Free Account</legend>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
+
+        <label for="vpassword">Verify Password</label>
+        <input id="vpassword" type="password" placeholder="Password">
+
+        <button  class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+</div>
+</body>

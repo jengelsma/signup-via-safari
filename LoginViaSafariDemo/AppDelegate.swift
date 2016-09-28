@@ -18,6 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+
+    
+    func  application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        print("app: \(app)")
+        print("url: \(url)")
+        print("options: \(options)")
+        print("query: \(url.query)")
+        
+        if let sourceApplication = options["UIApplicationOpenURLOptionsSourceApplicationKey"] {
+            
+            if (String(sourceApplication) == "com.apple.SafariViewService") {
+                
+                var userName = ""
+                if let query = url.query {
+                    let pair = query.componentsSeparatedByString("=")
+                    userName = pair.last!
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName(kSafariViewControllerCloseNotification, object: userName)
+                return true
+            }
+        }
+        
+        return true
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
